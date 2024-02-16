@@ -66,9 +66,13 @@ const productDiscountElement = document.querySelector(".productDiscount");
 const discountsElement = document.querySelector(".discounts");
 const commentRatingUp = document.querySelector(".comment-rating-up");
 const commentRatingDown = document.querySelector(".comment-rating-down");
+const addToCard = document.querySelector(".addToCard");
+const dialogs = document.querySelector(".dialogs")
 
 const addBtns2 = document.querySelector("#addBtns2");
 let price = urun.price; 
+const counters = localStorage.getItem('productCounter');
+const prices = localStorage.getItem('productPrice');
 
 productDiscountElement.textContent = `% ${urun.discountPercentage}`;
 discountsElement.textContent = "1098";
@@ -76,46 +80,77 @@ discountsElement.textContent = "1098";
 commentRatingUp.addEventListener('click', function(e) {
     e.preventDefault();
     counter++;
-    price *= 2;
+    price *= 2; 
+    localStorage.setItem('productCounter', counter);
+    localStorage.setItem('productPrice', price);
+    
     productPriceElement.textContent = `$ ${price.toFixed(2)}`; 
     addBtns2.textContent = counter;
+    updateDialogsContent();
 });
 
 commentRatingDown.addEventListener('click', function(e) {
     e.preventDefault();
-    if (counter > 0) { 
+    if (counter > 0) {
         counter--;
         price /= 2; 
+        localStorage.setItem('productCounter', counter);
+        localStorage.setItem('productPrice', price);
+        
         productPriceElement.textContent = `$ ${price.toFixed(2)}`; 
         addBtns2.textContent = counter;
+        updateDialogsContent();
     }
 });
 
 
+addToCard.addEventListener('click',function(e){
+    e.preventDefault();
+    dialogs.style.display = "block"
+})
 
+function updateDialogsContent() {
+    const storedCounter = localStorage.getItem('productCounter');
+    const storedPrice = localStorage.getItem('productPrice');
+
+    dialogs.innerHTML = `
+    <div class="dialogCont">
+    <div class="dialog img">
+        <img src="${urun.thumbnail}" alt="Product Image">
+    </div>
+    <div class="dialog-text">
+            <p class="dialogProduct">Ürün Sayısı: <strong>${storedCounter}</strong></p>
+            <p class="dialogProduct">Ürün Fiyatı: <strong>$${storedPrice}</strong></p>
+    </div>
+    </div>
+    <a href="payment.html" class="paymentButton">Ödeme Yap</a>
+    `;
+}
+
+updateDialogsContent();
 function initializeThumbnailLinks() {
-const links = document.querySelectorAll('.thumbnail-img .thumb-link');
+    const links = document.querySelectorAll('.thumbnail-img .thumb-link');
 
-links.forEach(link => {
-link.addEventListener('click', function (e) {
-e.preventDefault();
+    links.forEach(link => {
+    link.addEventListener('click', function (e) {
+    e.preventDefault();
 
-const newSrc = this.querySelector('img').getAttribute('src');
-document.querySelector('.homeImg img').src = newSrc;
+    const newSrc = this.querySelector('img').getAttribute('src');
+    document.querySelector('.homeImg img').src = newSrc;
 
-links.forEach(lnk => {
-    lnk.style.opacity = "0.5";
-});
+    links.forEach(lnk => {
+        lnk.style.opacity = "0.5";
+    });
 
-this.style.opacity = "1";
+    this.style.opacity = "1";
 
-links.forEach(lnk => {
-    lnk.style.border = "none";
-});
-this.style.border = "4px solid #FF7E1B";
-this.style.borderRadius = "10px";
-});
-});
+    links.forEach(lnk => {
+        lnk.style.border = "none";
+    });
+    this.style.border = "4px solid #FF7E1B";
+    this.style.borderRadius = "10px";
+    });
+    });
 }
 
 } else {
