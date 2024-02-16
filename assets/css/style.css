@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+*{
+    margin:0px;
+    padding:0px
+}
+
+img{
+    display: block;
+}
+
+ol,ul,li,a{
+    text-decoration: none;
+    list-style-type: none;
+}
+:root{
+    --primary-color:#fff;
+    --secondary-color:#FF7E1B;
+    --text-color:#69707D;
+    --font-family:"Kumbh Sans";
+}
+.topHeader{
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+}
+
+.menuContainer{
+    width: 70%;
+    height: auto;
+    border-bottom: 1px solid #E4E9F2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuAndLogo{
+    display: flex;
+    align-items: center;
+}
+
+.menuContItem{
+    display: flex;
+    margin-left: 56.5px;
+    margin-top: 2px;
+}
+
+.menuItem{
+color: #69707D;
+font-family: var(--font-family);
+font-size: 15px;
+margin-right: 32px;
+}
+
+.iconsCont{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.oval{
+    width: 50px;
+    height: 50px;
+}
+
+.mark{
+    margin-right: 46px;
+}
+
+.productContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.botContainerProd{
+    width: 70%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.imgProductText{
+    display: flex;
+    flex-direction: column;
+}
+.conts{
+    width: 45%;
+}
+
+.homeImg img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.thumbnail-img {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.thumbimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.title{
+    color: var(--secondary-color);
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.productTitle {
+    margin-top: 20px;
+    color: #1D2026;
+    font-family: var(--font-family);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.productTitle{
+    color: #1D2026;
+    font-family: var(--font-family);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+
+.productDesc{
+    color:var(--text-color);
+    font-family:var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 20px
+}
+
+.priceAndDiscount{
+    margin-top:20px;
+}
+
+.productPrice{
+    color: #1D2026;
+    font-family: var(--font-family);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.priceAndDiscount{
+    display: flex;
+    align-items: center;
+}
+
+.productDiscount{
+    color:var(--secondary-color);
+    font-family:var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 20px;
+    background-color: #FFEEE2;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.discounts{
+    color: #B6BCC8;
+    font-family: "Kumbh Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px; /* 162.5% */
+    text-decoration: line-through;
+    margin-top: 20px;
+}
+
+.buttonsAndAdd {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.comment-rating {
+background-color:#F6F8FD;
+border-radius: 10px;
+display: flex;
+width: 157px;
+height: 56px;
+    & > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    strong {
+        flex-grow: 1;
+        color: #1D2026;
+        text-align: center;
+        font-family: "Kumbh Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+    }
+
+    a {color:#FF7E1B;
+        flex-basis: 35px;
+        font-weight: 700;
+        font-size: 20px;
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        &:hover {
+            background-color: gray;
+        }
+    }
+}
+
+a.addToCard {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    width: 272px;
+    height: 17px;
+    text-align: center;
+    color: #fff;
+    font-family: var(--font-family);
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.addToCard svg {
+    margin-right: 20px;
+}
+
+.addBtns {
+    background-color: var(--secondary-color);
+    width: 18px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-family: var(--font-family);
+    padding: 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 20.5%;
+}
+
+.contText {
+    width: 100%;
+    height: 850px;
+    background-size: cover;
+}
+
+div#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 10px; */
+}
+
+div#product-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.product {
+    padding: 70px;
+}
+.product-info img {
+    width: 100%;
+    height: 400px;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;}
+.arrowUps{
+    display: flex;
+}
+div#nextPage {
+    padding-left: 10px;
+    cursor: pointer;
+}
+div#previusPage {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.arow {
+    font-size: 30px;
+    background-color: #868686;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.arow:hover{
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
+}
+
+.product-info div {
+    margin-top: 30px;
+}
+
+h2.prodTitle {
+    font-family: var( --font-family);
+}
+
+p.prodText {
+    margin-top: 10px;
+    font-family: var(--font-family);
+}
+
+.product-info {
+    cursor: pointer;
+}
